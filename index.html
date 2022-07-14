@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="noindex,follow">
+<title>Pixel Warfare 3: Youtubers | PacoGames.com</title>
+<link rel="stylesheet" href="https://data.pacogames.com/webgl/template/api01u4.css">
+<link rel="shortcut icon" href="https://data.pacogames.com/webgl/template/favicon.ico">
+
+</head>
+<body class="template">
+<p class="header"><span>Pixel Warfare 3: Youtubers | PacoGames.com</span></p>
+<div id="gameContainer">
+<div id="spContainer"></div>
+<div id="gameContent">
+<div>
+<canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600" width="1000"></canvas>
+</div>
+</div>
+</div>
+
+
+<div id="ga_press_to_play_screen" onclick="runUnityLoader()" style="position: absolute; height: 90%; width: 90%; top: 5%; left: 5%; background-color: rgba(0, 0, 0, 0.63); z-index: 39">
+<div style="position:absolute;top: 50%;left:50%; transform: translate(-50%,-50%);">
+<img src="https://data.pacogames.com/gameplayer/img/play-button.png">
+<p style="font-size: 20px; color: white;">Press to <span style="color: #ebba16;">play game</span></p>
+</div>
+</div>
+<script type="text/javascript">
+      var Module = {
+        TOTAL_MEMORY: 268435456,
+        errorhandler: null,     // arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+        compatibilitycheck: null,
+        dataUrl: "newWEBGLtest" + ".data",
+        codeUrl: "newWEBGLtest" + ".js",
+        memUrl:  "newWEBGLtest" + ".mem",
+      };
+
+      function runUnityLoader(){
+            var ga_unityLoaderScr = document.createElement("script");
+                ga_unityLoaderScr.src = "UnityLoader" + ".js";
+                document.head.appendChild(ga_unityLoaderScr);
+        
+          document.getElementById("ga_press_to_play_screen").style.display = "none";
+      }
+      
+      gameConfig(1);
+      function gameConfig(type){
+          var gameFolder   = "pixel-warfare-3",
+              gameTitle    = "Pixel Warfare 3: Youtubers",                       
+              sChannel     = "",                
+              pauseMode    = false,
+              splashScreen = false,
+              multiplayer  = true;
+            
+            if(type === 1){
+                //getJson(false, gameFolder);
+            } else {
+                return [gameFolder, gameTitle, splashScreen, multiplayer, pauseMode, sChannel];
+            };                           
+
+      };
+
+      function phpinfo(){
+        var idu = 802713796,
+        //ida normally provides randomness seed, it seems
+            ida = 1467059587,// + Math.round(Math.random()*16000),
+            id = 4624
+        return [idu, ida, id];
+      }
+    </script>
+
+</body>
+</html>
